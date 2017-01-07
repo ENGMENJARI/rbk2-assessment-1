@@ -6,9 +6,9 @@ var makeHashTable = function() {
     _storage: [],
     retrieve: function(key) {
       var index=hashFn(key,4)
-      for(var i=0;i<_storage[index].length;i++){
-        if(_storage[index][i][0]===key){
-          return _storage[index][i][1]
+      for(var i=0;i<this._storage[index].length;i++){
+        if(this._storage[index][i][0]===key){
+          return this._storage[index][i][1]
         }
       }
       //your code is here
@@ -18,19 +18,25 @@ var makeHashTable = function() {
     insert: function(key, value) {
       var index=hashFn(key,4)
       var found=true
-      if(!_storage[index]){
-        _storage[index]=[]
+      if(!this._storage[index]){
+        this._storage[index]=[]
       }
-      for(var i=0;i<_storage[index].length;i++){
-        if(_storage[index][i][0]===key){
-          _storage[index][i][1]===value
+      for(var i=0;i<this._storage[index].length;i++){
+        if(this._storage[index][i][0]===key){
+          this._storage[index][i][1]===value
         }
         found=false
       }
+      if(found=true){
+       this. _storage[index].push([key,value])
+      }
 
       //your code is here
-  };
-};
+  }
+}
+
+}
+
 
 // This is a "hashing function". You don't need to worry about it, just use it to turn any key into a pseudo-random key
 var hashFn = function(str, max) {
