@@ -5,10 +5,29 @@ var makeHashTable = function() {
   return {
     _storage: [],
     retrieve: function(key) {
+      var index=hashFn(key,4)
+      for(var i=0;i<_storage[index].length;i++){
+        if(_storage[index][i][0]===key){
+          return _storage[index][i][1]
+        }
+      }
       //your code is here
+
     },
 
     insert: function(key, value) {
+      var index=hashFn(key,4)
+      var found=true
+      if(!_storage[index]){
+        _storage[index]=[]
+      }
+      for(var i=0;i<_storage[index].length;i++){
+        if(_storage[index][i][0]===key){
+          _storage[index][i][1]===value
+        }
+        found=false
+      }
+
       //your code is here
   };
 };

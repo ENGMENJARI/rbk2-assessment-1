@@ -19,5 +19,13 @@ var Stack = function() {
 	storage.size=function(){
 		return count
 	}
+
+	storage.first=function(){
+		return storage[0]
+	}
+	storage.last=function(){
+		return storage[size-1]
+	}
 	return storage
+
 };
